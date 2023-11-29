@@ -59,6 +59,7 @@ def txt2img(id_task: str, prompt: str, negative_prompt: str, prompt_styles, step
     generation_info_js = processed.js()
     if opts.samples_log_stdout:
         print(generation_info_js)
+        print(override_settings)
 
     if opts.do_not_show_images:
         processed.images = []

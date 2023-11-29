@@ -293,7 +293,7 @@ Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 965400086, Size: 512x512, Model
 
     # Missing RNG means the default was set, which is GPU RNG
     if "RNG" not in res:
-        res["RNG"] = "GPU"
+        res["RNG"] = "CPU"
 
     if "Schedule type" not in res:
         res["Schedule type"] = "Automatic"

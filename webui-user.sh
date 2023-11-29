@@ -10,8 +10,20 @@
 #clone_dir="stable-diffusion-webui"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-#export COMMANDLINE_ARGS=""
 
+git config --global --add safe.directory /app
+git config --global --add safe.directory /app/repositories/BLIP
+git config --global --add safe.directory /app/repositories/CodeFormer
+git config --global --add safe.directory /app/repositories/generative-models
+git config --global --add safe.directory /app/repositories/k-diffusion
+git config --global --add safe.directory /app/repositories/stable-diffusion-stability-ai
+sudo chmod -R 777 /app
+sudo chown -R sduser /app
+
+
+if [ "$SD_MODE" = "API" ]; then
+    export COMMANDLINE_ARGS="--nowebui"
+fi
 # python3 executable
 #python_cmd="python3"
 
